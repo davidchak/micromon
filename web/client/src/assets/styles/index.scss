@@ -1,0 +1,22 @@
+$bg-primary: #0c3135;
+$bg-secondary: #4b4b4b;
+
+:root{ 
+  --bg-color-primary: #{$bg-primary};
+  --bg-color-secondary: #{$bg-secondary};
+}
+
+body {
+  font-family:'Roboto';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+}
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  height: 100%;
+  width: 100%;
+}

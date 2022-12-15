@@ -1,0 +1,29 @@
+{
+  "name": "micromon",
+  "version": "1.0.0",
+  "description": "Micro monitoring server",
+  "main": "index.js",
+  "private": true,
+  "packageManager": "npm",
+  "directories": {
+    "doc": "doc",
+    "libs": "libs"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.46.0",
+    "@typescript-eslint/parser": "^5.46.0",
+    "eslint": "^8.29.0",
+    "lerna": "^6.1.0"
+  },
+  "workspaces": [
+    "api/*",
+    "web/*",
+    "libs/*"
+  ],
+  "scripts": {
+    "start": "./scripts/start/all.sh",
+    "start:client": "./scripts/start/client.sh"
+  }
+}

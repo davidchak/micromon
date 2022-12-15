@@ -1,0 +1,16 @@
+0 silly argv {
+0 silly argv   _: [ 'bootstrap' ],
+0 silly argv   lernaVersion: '6.1.0',
+0 silly argv   '$0': '/home/m0/.yarn/bin/lerna'
+0 silly argv }
+1 notice cli v6.1.0
+2 verbose rootPath /home/m0/Dev/monitoring_v2
+3 error Error: Invalid tag name "^1.0.0.": Tags may not have any characters that encodeURIComponent encodes.
+3 error     at invalidTagName (/home/m0/Dev/monitoring_v2/node_modules/npm-package-arg/npa.js:94:15)
+3 error     at fromRegistry (/home/m0/Dev/monitoring_v2/node_modules/npm-package-arg/npa.js:299:13)
+3 error     at Function.resolve (/home/m0/Dev/monitoring_v2/node_modules/npm-package-arg/npa.js:84:12)
+3 error     at /home/m0/Dev/monitoring_v2/node_modules/@lerna/package-graph/index.js:89:30
+3 error     at Array.forEach (<anonymous>)
+3 error     at /home/m0/Dev/monitoring_v2/node_modules/@lerna/package-graph/index.js:60:38
+3 error     at Map.forEach (<anonymous>)
+3 error     at new PackageGraph (/home/m0/Dev/monitoring_v2/node_modules/@lerna/package-graph/index.js:49:10)
