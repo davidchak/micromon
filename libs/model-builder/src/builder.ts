@@ -1,64 +1,44 @@
-export const enum ModelTypesEnum {
-  "NODE",
-  "INTERFACE",
-  "VOLUME",
-  "APPLICATION",
-  "METRICS"
-}
-
-export type ModelBaseAttributesType = {
-  id: string,
-  name: string,
-  type: string
-}
-
-export type ModelAttributesType = ModelBaseAttributesType | Record<string, any>;
-
-export type ModelCompatibilityType = ModelTypesEnum[];
-
-export type ModelMethodsType = Record<string, (args: unknown) => void>;
-
-export type BaseModelType = {
-  // relations: {},
-  attributes: ModelAttributesType,
-  compatibility: ModelCompatibilityType,
-  nestedItems: BaseModelType[],
-  methods: ModelMethodsType,
-}
+import { generateNewId } from "./helpers"; 
+import { BaseModelType,  } from "./types";
 
 
-export const ModelBuilder = () => {
+export const ModelBuilder = function(){
   const _state: BaseModelType = {
-    attributes: {},
+    plugins: [],
+    attributes: new Proxy({}, {
+      get(target, value) {
+        if (!target[value]) {
+          return undefined;
+        }
+        return target[value];
+      }
+    }),
+    methods: {},
+    relatedModels: new Proxy({}, {}),
     compatibility: [],
-    nestedItems: [],
-    methods: {}
+    addPlugin: function (plugin) {
+      plugin(this);
+    }
   };
 
   const _createId = (prefix) => {
-    return {id:`${prefix}_${Math.round(Math.random()*100000)}`};
+    return `${prefix}_${generateNewId()}`;
   };
 
-  const _mapAttributes = (name: string, type: ModelTypesEnum) => {
-    _state.attributes = {
-      ..._createId(type),
-      name,
-      type
-    }
-    return _state;
-  }
 
-  const build = (name, type) => {
-    _mapAttributes(name, type)
+
+  const build = (type) => {
+    _state.attributes["id"] = _createId(type);
     return _state;
   };
 
-  const clone = (newName, instance) => {
-    return _state;
-  };
+  // const clone = (newName, instance) => {
+
+  //   return _state;
+  // };
   
   return {
     build,
-    clone
+    // clone
   }
 }
