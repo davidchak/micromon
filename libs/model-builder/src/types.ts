@@ -10,7 +10,6 @@ export const enum ModelTypesEnum {
 
 export type ModelBaseAttributesType = {
   id: string,
-  name: string,
   type: string
 }
 
@@ -21,7 +20,8 @@ export type ModelCompatibilityType = ModelTypesEnum[];
 export type ModelMethodsType = Record<string, (args?: any) => any|void>;
 
 
-export type ModelRelatedItems = Record<string, BaseModelType>;
+// export type ModelRelatedItems = ModelBaseAttributesType[];
+export type ModelRelatedItems = BaseModelType[];
 
 export type BaseModelType = {
   plugins: string[],
@@ -31,4 +31,5 @@ export type BaseModelType = {
   methods: ModelMethodsType,
   addPlugin: (plugin: ModelPluginType) => void;
   addRelation: (instance: BaseModelType) => void;
+  addAttribute: (prop: string, value: any) => void;
 }

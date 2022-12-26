@@ -18,9 +18,7 @@ export const ModelBuilder = function(){
       }
     }),
     methods: {},
-    
-    // TODO: переделать на массив с объектами вида [{type: "node", id: "node_8980", isArray: false}]
-    relatedModels: new Proxy({}, {
+    relatedModels: new Proxy([], {
       get(target, value, receiver) {
         if (!Reflect.has(target, value)) {
           return undefined;
@@ -37,8 +35,24 @@ export const ModelBuilder = function(){
       this.plugins.push(plugin.name)
       plugin(this);
     },
+
     addRelation: function(modelInstance){
-      this.relatedModels[modelInstance.attributes.type] = modelInstance;
+      
+      this.relatedModels.push(modelInstance)
+      
+      // const { attributes } = modelInstance;
+      // this.relatedModels.push({
+      //   id: attributes["id"],
+      //   type: attributes["type"],
+      // });
+    },
+    addAttribute: function(prop, value){
+      if(this.attributes[prop]){
+        console.log("ключ уже находится в объекте")
+        return;
+      }
+
+      this.attributes[prop] = value;
     }
   };
 
@@ -48,6 +62,8 @@ export const ModelBuilder = function(){
 
   const build = (type: ModelTypesEnum) => {
     _state.attributes["id"] = _createId(type);
+    // TODO: реализовать создание модели на основе заготовки
+    _state.attributes["type"] = type;
     return _state;
   };
 
