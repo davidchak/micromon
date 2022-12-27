@@ -1,4 +1,13 @@
+import { Logger } from "./instance";
+import { ConsoleTransport } from "./transports/console"; 
 
-import { loggerCreator } from "./instance"
+import type { ILogger } from "./types";
 
-export default loggerCreator.getInstance();
+export default {
+  Logger,
+  ConsoleTransport
+}
+
+export type {
+  ILogger
+}

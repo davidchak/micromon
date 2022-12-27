@@ -1,17 +1,33 @@
-export interface ILoggerInstance {
-  id: string,
+export interface ILoggerTransport {
   info: (msg: string) => void,
   warn: (msg: string) => void,
   error: (msg: string) => void,
 }
 
-export interface ILoggerCreator {
+export interface ILoggerCreateOptions {
+  transport: ILoggerTransport
+}
+
+
+export interface ILoggerInstance {
+  info: (msg: string) => void,
+  warn: (msg: string) => void,
+  error: (msg: string) => void,
+}
+
+export interface ILogger {
   _instance: ILoggerInstance | null,
-  _createLoggerText: (level: string, msg: string) => string,
-  _createStyle: (level: string) => string,
+  _transport: ILoggerTransport | null,
   _info: (msg: string) => void,
   _warn: (msg: string) => void,
   _error: (msg: string) => void,
-  _createInstance: () => ILoggerInstance
-  getInstance: () => ILoggerInstance,
+  _createMessage: (logType:LoggerLogTypeEnum,  msg: string) => void
+  _createInstance: (props: ILoggerCreateOptions) => ILoggerInstance
+  create: (props: ILoggerCreateOptions) => ILoggerInstance,
+}
+
+export const enum LoggerLogTypeEnum {
+  "INFO" = "info",
+  "WARN" = "warn",
+  "ERROR" = "error",
 }
