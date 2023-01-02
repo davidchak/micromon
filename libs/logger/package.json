@@ -1,5 +1,5 @@
 {
-  "name": "@micromon/web-logger",
+  "name": "@micromon/logger",
   "version": "1.0.0",
   "description": "",
   "main": "src/index.ts",
@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "nodemon",
     "build": "npm run test & tsc",
-    "test": "jest"
+    "test": "jest",
+    "example": "nodemon ./example/index.ts"
   },
   "devDependencies": {
     "@types/jest": "^29.2.4",

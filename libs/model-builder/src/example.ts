@@ -5,6 +5,7 @@ import { InfoPlugin } from "./plugins/info";
 
 const node1 = ModelBuilder().build(ModelTypesEnum.NODE);
 node1.addAttribute("name", "node1");
+node1.addAttribute("admin", "иванов ии");
 node1.addPlugin(StatusPlugin);
 node1.addPlugin(InfoPlugin);
 node1.methods.setStatus(500);
@@ -45,3 +46,4 @@ app2.addRelation(metrick2);
 
 console.log(node1.methods.getStatus());
 console.log(node1.methods.getInfo());
+// console.log(JSON.stringify(node1, null, 2))
