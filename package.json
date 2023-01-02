@@ -23,7 +23,10 @@
     "libs/*"
   ],
   "scripts": {
-    "start:all": "./scripts/start/all.sh",
-    "start:client": "./scripts/start/client.sh"
+    "start": "./scripts/start/all.sh",
+    "start:client": "./scripts/start/client.sh",
+    "test": "./scripts/test/all.sh",
+    "build": "./scripts/build/all.sh",
+    "deploy": "./scripts/deploy/all.sh"
   }
 }

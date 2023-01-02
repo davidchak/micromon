@@ -1,13 +1,7 @@
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
-
-
-import { Button, TextField, Select, MenuItem } from "@mui/material";
 import React from "react";
-import classes from "./App.module.scss"; 
-import { types } from "@micromon/constant";
-import _ from "lodash";
-
+// import { Button, TextField, Select, MenuItem } from "@mui/material";
 
 const darkTheme = createTheme({
   palette: {
@@ -16,82 +10,11 @@ const darkTheme = createTheme({
 });
 
 const App = () => {
-  const [baseObject, setBaseObject] = React.useState({});
-  const [newKey, setNewKey] = React.useState("");
-  const [newValue, setNewValue] = React.useState("Type");
-
-  const resetForm = () => {
-    setNewKey("");
-    setNewValue("");
-  }
-
-  const handleRowAdd = () => {
-    if(!newKey || !newValue){
-      alert('Заполни все поля');
-      return;
-    }
-
-    setBaseObject(
-      Object.assign(baseObject, {[newKey]: newValue})
-    );
-
-    resetForm();
-  }
-
-  const handleRowDelete = (key) => {
-    setBaseObject(
-      _.omit(baseObject, key)
-    )
-  }
 
   return (
     <ThemeProvider theme={darkTheme}>
       <CssBaseline />
-      <div className={classes.app}>
-        <div className={classes.app__side}>
-          <table width="100%">
-            { Object.entries(baseObject).map(([key, value]) => {
-              return (<tr>
-                <td width="30%">{key}</td>
-                <td width="30%">{value}</td>
-                <td width="30%">
-                  <Button onClick={() => handleRowDelete(key)}>x</Button>
-                </td>
-              </tr>)
-            }) }
-            <tr>
-              <td width="30%">
-                <TextField 
-                  label="Key" 
-                  variant="outlined" 
-                  value={newKey} 
-                  onChange={(ev) => setNewKey(ev.target.value)} />
-              </td>
-              <td width="30%">
-                <Select
-                  fullWidth
-                  name="Type"
-                  value={newValue}
-                  onChange={(ev) => setNewValue(ev.target.value)}
-                >
-                  { Object.entries(types).map(([key, value]) => {
-                    return <MenuItem id={key} value={value}>{ key }</MenuItem>
-                  })}
-                </Select>
-              </td>
-              <td width="30%">
-                <Button onClick={handleRowAdd}>Добавить</Button>
-              </td>
-            </tr>
-          </table>
-
-        </div>
-        <div className={classes.app__side}>
-          <pre>
-            { JSON.stringify(baseObject, null, 2) }
-          </pre>
-        </div>
-      </div>
+      
     </ThemeProvider>
   );
 }
