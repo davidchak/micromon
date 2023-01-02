@@ -1,13 +1,24 @@
-export interface ILoggerTransport {
-  info: (msg: string) => void,
-  warn: (msg: string) => void,
-  error: (msg: string) => void,
+export const enum LoggerLogTypeEnum {
+  "INFO" = "info",
+  "WARN" = "warn",
+  "ERROR" = "error",
 }
 
-export interface ILoggerCreateOptions {
+export interface ILoggerTransportMsg {
+  text: string;
+  timestamp: Date;
+  // info?: any;
+}
+
+export interface ILoggerTransport {
+  info: (args: ILoggerTransportMsg) => void,
+  warn: (args: ILoggerTransportMsg) => void,
+  error: (args: ILoggerTransportMsg) => void,
+}
+
+export interface ILoggerOptions {
   transport: ILoggerTransport
 }
-
 
 export interface ILoggerInstance {
   info: (msg: string) => void,
@@ -15,19 +26,9 @@ export interface ILoggerInstance {
   error: (msg: string) => void,
 }
 
-export interface ILogger {
-  _instance: ILoggerInstance | null,
-  _transport: ILoggerTransport | null,
-  _info: (msg: string) => void,
-  _warn: (msg: string) => void,
-  _error: (msg: string) => void,
-  _createMessage: (logType:LoggerLogTypeEnum,  msg: string) => void
-  _createInstance: (props: ILoggerCreateOptions) => ILoggerInstance
-  create: (props: ILoggerCreateOptions) => ILoggerInstance,
-}
+export interface ILoggerCreate {
+  create: (options: ILoggerOptions) => ILoggerInstance
+} 
 
-export const enum LoggerLogTypeEnum {
-  "INFO" = "info",
-  "WARN" = "warn",
-  "ERROR" = "error",
-}
+export type LoggerType = () => ILoggerCreate; 
+

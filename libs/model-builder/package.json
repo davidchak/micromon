@@ -7,7 +7,7 @@
   "license": "ISC",
   "scripts": {
     "dev": "nodemon",
-    "build": "npm run test & tsc",
+    "build": "rm -rf dist && tsc",
     "test": "jest",
     "example": "nodemon ./src/example.ts"
   },
