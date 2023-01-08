@@ -3,10 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@consta/uikit": "^4.6.3",
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/roboto": "^4.5.8",
     "@micromon/constant": "^1.0.0",
+    "@micromon/logger": "^1.0.0",
     "@mui/icons-material": "^5.10.16",
     "@mui/material": "^5.10.17",
     "@testing-library/jest-dom": "^5.16.5",
@@ -20,8 +22,7 @@
     "react-scripts": "5.0.1",
     "sass": "^1.56.2",
     "web-vitals": "^2.1.4",
-    "zustand": "^4.1.5",
-    "@micromon/logger": "^1.0.0"
+    "zustand": "^4.1.5"
   },
   "scripts": {
     "start": "react-scripts start",

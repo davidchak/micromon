@@ -1,7 +1,7 @@
 {
-  "name": "@micromon/logger",
+  "name": "@micromon/event-bus",
   "version": "1.0.0",
-  "description": "Logger",
+  "description": "EventBus",
   "main": "dist/index.js",
   "types": "./dist/index.d.ts",
   "author": "",

@@ -1,0 +1,64 @@
+import { EventBusType, IEventBusInstance } from "./types";
+
+export type { EventBusType, IEventBusInstance };
+export const EventBus: EventBusType = () => {
+  let _instance: IEventBusInstance | undefined = undefined;
+  let _store: Map<string, any> = new Map();
+
+  const _on = (type: string, cb: () => void) => {
+    _store.has(type) ? _store.get(type).push(cb) : _store.set(type, [cb]);
+  };
+
+  const _off = (type: string, cb: () => void) => {
+    const cbs = _store.get(type);
+
+    // ключа нет
+    if (!cbs) return;
+
+    // ключик есть, удаляем колбэк
+    const index = cbs.findIndex((el: () => void) => el === cb);
+    if (index >= 0) {
+      cbs.splice(index, 1);
+    }
+
+    if (cbs.length === 0) {
+      _store.delete(type);
+    }
+  };
+
+  const _emit = (type: string, ...args: Array<any>) => {
+    const cbs = _store.get(type) || [];
+
+    for (let cb of cbs) {
+      cb(...args);
+    }
+  };
+
+  const _info = () => {
+    return _store;
+  };
+
+  // Создание единственного экземпляра
+  const createInstance = () => {
+    _store = new Map();
+
+    return {
+      on: _on,
+      off: _off,
+      emit: _emit,
+      info: _info,
+    };
+  };
+
+  const getInstance = () => {
+    if (!_instance) {
+      _instance = createInstance();
+    }
+
+    return _instance;
+  };
+
+  return {
+    getInstance,
+  };
+};
