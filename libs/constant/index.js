@@ -3,6 +3,7 @@ export const status = {
     "ok": "OK",
     "warn": "WARN",
     "error": "ERROR",
+    "critical": "CRITICAL",
     "default": "DEFAULT"  
   },
 
@@ -10,6 +11,7 @@ export const status = {
     "ok": "500",
     "warn": "400",
     "error": "300",
+    "critical": "200",
     "default": "0"  
   }
 }
@@ -17,7 +19,7 @@ export const status = {
 export const types = {
   "text": "String",
   "number": "Number",
-  "boolean": "Bool",
-  "blob": "Blob",
+  "boolean": "Boolean",
+  "bites": "Bites",
   "date": "Date"
 }
