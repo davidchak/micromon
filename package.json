@@ -27,6 +27,9 @@
     "start:client": "./scripts/start/client.sh",
     "test": "./scripts/test/all.sh",
     "build": "./scripts/build/all.sh",
-    "deploy": "./scripts/deploy/all.sh"
+    "deploy": "./scripts/deploy/all.sh",
+    "clean": "./scripts/clean/all.sh",
+    "link": "./scripts/link/all.sh",
+    "bootstrap": "./scripts/bootstrap/all.sh"
   }
 }
