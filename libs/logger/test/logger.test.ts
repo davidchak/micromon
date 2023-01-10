@@ -18,10 +18,6 @@ describe("Console logger test", () => {
     expect(logger).toHaveProperty("warn");
     expect(logger).toHaveProperty("error");
 
-    logger.info("Info");
-    logger.warn("Warn");
-    logger.error("Error");
-
     // expect(logger.info).toBeCalled();
     // expect(logger.warn).toBeCalled();
     // expect(logger.error).toBeCalled();
