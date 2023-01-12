@@ -1,0 +1,43 @@
+version: "3"
+
+networks:
+  wan:
+  lan:
+
+services:
+  client:
+    build: 
+      context: .
+      dockerfile: ./deploy/client/dockerfile
+    restart: unless-stoped
+    ports:
+      - 80:80
+      - 443:443
+    networks:
+      - wan
+    depends_on:
+      - server
+    
+  server:
+    build: 
+      context: .
+      dockerfile: ./deploy/server/dockerfile
+    restart: unless-stoped
+    ports:
+      - 8080:8080
+      - 80443:80443
+    networks:
+      - wan
+      - lan
+    depends_on:
+      - database
+
+  database:
+    build: 
+      context: .
+      dockerfile: ./deploy/database/dockerfile
+    restart: unless-stoped
+    ports:
+      - 5432:5432
+    networks:
+      - lan
