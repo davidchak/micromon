@@ -1,0 +1,35 @@
+<svg width="100" height="100" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_689_422377)">
+<rect width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect y="20" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect y="40" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect y="60" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect y="80" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="20" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="20" y="20" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="20" y="40" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="20" y="60" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="20" y="80" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="40" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="40" y="20" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="40" y="40" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="40" y="60" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="40" y="80" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="60" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="60" y="20" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="60" y="40" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="60" y="60" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="60" y="80" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="80" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="80" y="20" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="80" y="40" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="80" y="60" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+<rect x="80" y="80" width="20" height="20" stroke="#A0A2AB" stroke-opacity="0.05"/>
+</g>
+<rect x="0.5" y="0.5" width="99" height="99" stroke="white" stroke-opacity="0.05"/>
+<defs>
+<clipPath id="clip0_689_422377">
+<rect width="100" height="100" fill="white"/>
+</clipPath>
+</defs>
+</svg>

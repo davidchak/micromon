@@ -1,12 +1,12 @@
-import { Theme, presetGpnDefault } from '@consta/uikit/Theme';
+import { Theme, presetGpnDark } from '@consta/uikit/Theme';
 import React from "react";
- 
+import PageLayout from '@components/layout/PageLayout.ui';
+
 
 const App = () => {
-
   return (
-    <Theme preset={presetGpnDefault}>
-      <div>Client</div>
+    <Theme preset={presetGpnDark} style={{ height: "100%" }}>
+      <PageLayout />
     </Theme>
   );
 }
