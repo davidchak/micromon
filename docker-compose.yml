@@ -7,37 +7,39 @@ networks:
 services:
   client:
     build: 
-      context: .
-      dockerfile: ./deploy/client/dockerfile
-    restart: unless-stoped
+      context: ./web/client
+      dockerfile: ./dockerfile
+    container_name: micromon_client_${NODE_ENV}
+    restart: unless-stopped
     ports:
       - 80:80
       - 443:443
     networks:
       - wan
-    depends_on:
-      - server
+    # depends_on:
+    #   - server
     
-  server:
-    build: 
-      context: .
-      dockerfile: ./deploy/server/dockerfile
-    restart: unless-stoped
-    ports:
-      - 8080:8080
-      - 80443:80443
-    networks:
-      - wan
-      - lan
-    depends_on:
-      - database
+  # server:
+  #   build: 
+  #     context: .
+  #     dockerfile: ./deploy/server/dockerfile
+  #   container_name: micromon_server:${NODE_ENV}
+  #   restart: unless-stoped
+  #   ports:
+  #     - 3000:3000
+  #   networks:
+  #     - wan
+  #     - lan
+  #   depends_on:
+  #     - database
 
-  database:
-    build: 
-      context: .
-      dockerfile: ./deploy/database/dockerfile
-    restart: unless-stoped
-    ports:
-      - 5432:5432
-    networks:
-      - lan
+  # database:
+  #   build: 
+  #     context: .
+  #     dockerfile: ./deploy/database/dockerfile
+  #   container_name: micromon_database:${NODE_ENV}
+  #   restart: unless-stoped
+  #   ports:
+  #     - 5432:5432
+  #   networks:
+  #     - lan
