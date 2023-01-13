@@ -1,3 +1,4 @@
 #!/bin/sh
 
-lerna --scope=@micromon/client run start
+npm run start --workspace=@micromon/client
+

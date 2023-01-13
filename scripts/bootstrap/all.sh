@@ -1,3 +1,3 @@
 #!/bin/sh
 
-lerna bootstrap
+npm install

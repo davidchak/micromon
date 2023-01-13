@@ -1,3 +1,3 @@
 #!/bin/sh
 
-lerna run start
+npm run start --workspaces --if-present
