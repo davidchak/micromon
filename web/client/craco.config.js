@@ -9,7 +9,8 @@ module.exports = {
       '@stores': resolvePath('./src/stores'),
       '@utils': resolvePath('./src/utils'),
       '@actions': resolvePath('./src/actions'),
-      '@assets': resolvePath('./src/assets')
+      '@assets': resolvePath('./src/assets'),
+      '@root': resolvePath('.'),
     },
   },
 }
