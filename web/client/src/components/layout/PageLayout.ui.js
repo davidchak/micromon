@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 import { cnMixSpace } from '@consta/uikit/MixSpace';
 import { Layout } from "@consta/uikit/Layout";
 import styles from "./PageLayout.module.scss";
+import LeftSideMenu from '../forms/LeftSideMenu';
 
 
 const PageLayout = () => { 
@@ -13,10 +14,8 @@ const PageLayout = () => {
         style={{
           width: "100%",
           backgroundColor: "var(--color-bg-secondary)"
-        }}
-        className={cnMixSpace({
-          p: 'xl',
-        })} >
+        }}>
+        <LeftSideMenu />
         <Outlet />
       </Layout>
     </Layout>
