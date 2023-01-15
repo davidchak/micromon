@@ -4,21 +4,23 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "@consta/uikit": "^4.6.3",
+    "@linaria/react": "^4.3.3",
     "@micromon/constant": "^1.0.0",
-    "@micromon/event-bus": "^1.0.0",
     "@micromon/logger": "^1.0.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "antd": "^5.1.5",
+    "axios": "^1.2.2",
     "classnames": "^2.3.2",
+    "effector": "^22.5.0",
+    "effector-react": "^22.4.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.4.5",
     "react-scripts": "5.0.1",
-    "sass": "^1.56.2",
-    "zustand": "^4.1.5"
+    "sass": "^1.56.2"
   },
   "scripts": {
     "start": "craco start",
@@ -45,6 +47,7 @@
     ]
   },
   "devDependencies": {
-    "@craco/craco": "^7.0.0"
+    "@craco/craco": "^7.0.0",
+    "effector-logger": "^0.13.6"
   }
 }
