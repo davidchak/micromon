@@ -1,8 +1,8 @@
-// import { version } from "@root/packages.json"
+import packageJson from "../../../package.json"
 
 export const applicationConstants = {
   "APP_NAME": "MicroMon",
-  // "APP_VERSION": version,
+  "APP_VERSION": packageJson.version,
 }
 
 export const zIndexConstants = {
@@ -50,22 +50,13 @@ export const routesConstants = {
   "SETTINGS_ROUTE": "/settings",
 }
 
-// export const actionNames = {
-//   // User actions
-//   "USER_LOGIN": "@user_login",
-//   "USER_LOGOUT": "@user_logout",
-  
-//   // System actions
-//   "SYSTEM_READY": "@system_ready",
-  
-//   // Interface actions
-//   "OPEN_PROBLEMS_MENU": "@open_problems_menu",
-//   "OPEN_INFRA_MENU": "@open_infra_menu",
-//   "OPEN_COMPONENTS_MENU": "@open_components_menu",
-//   "OPEN_MAIN_MENU_LVL1": "@open_main_menu_lvl1",
-//   "OPEN_MAIN_MENU_LVL2": "@open_main_menu_lvl2",
-//   "OPEN_MAIN_MENU_LVL3": "@open_main_menu_lvl3",
-  
-//   // Canvas actions
-//   "ACTIVATE_EDIT_MODE": "@activate_edit_mode",
-// }
+export const userPermissionsConstant = {
+  "USER_IS_LOGGED": false,
+  "USER_CAN_READ": false,
+  "USER_CAN_EDIT": false,
+}
+
+export const editorConstant = {
+  "EDIT_MODE_IS_ACTIVE": false,
+  "AUTOSAVE_IS_ACTIVE": false,
+}

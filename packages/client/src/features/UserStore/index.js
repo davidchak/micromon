@@ -1,6 +1,6 @@
-import { createStore, createEvent, createEffect, forward, sample } from "effector"
-import { http } from "@features/ApiClient"; 
-import { apiConstants } from "@utils/constants";
+import { createStore, createEvent, createEffect, forward } from "effector"
+import { http } from "~features/ApiClient"; 
+import { apiConstants } from "~utils/constants";
 
 const { API_LOGIN_URL } = apiConstants;
 

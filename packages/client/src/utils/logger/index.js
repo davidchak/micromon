@@ -4,4 +4,4 @@ const logger = Logger().create({
   transport: WebConsoleTransport()
 })
 
-export default logger;
+export { logger };

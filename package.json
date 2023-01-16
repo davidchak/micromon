@@ -4,29 +4,31 @@
   "description": "Micro monitoring server",
   "main": "index.js",
   "private": true,
-  "packageManager": "npm",
-  "directories": {
-    "doc": "doc",
-    "libs": "libs"
-  },
+  "packageManager": "npm@9.2.0",
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": ">=18.12.1",
+    "npm": ">=9.2.0"
+  },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.46.0",
     "@typescript-eslint/parser": "^5.46.0",
-    "eslint": "^8.29.0"
+    "eslint": "^8.29.0",
+    "turbo": "^1.7.0"
   },
   "workspaces": [
-    "api/*",
-    "web/*",
-    "libs/*"
+    "packages/*",
+    "shared/*"
   ],
   "scripts": {
     "start": "./scripts/start/all.sh",
     "start:client": "./scripts/start/client.sh",
     "test": "./scripts/test/all.sh",
-    "build": "./scripts/build/all.sh",
     "deploy:local": "./scripts/deploy/local.sh",
-    "bootstrap": "./scripts/bootstrap/all.sh"
+    "bootstrap": "./scripts/bootstrap/all.sh",
+    "build": "./scripts/build/all.sh",
+    "build:client": "./scripts/build/client.sh",
+    "build:logger": "./scripts/build/logger.sh"
   }
 }

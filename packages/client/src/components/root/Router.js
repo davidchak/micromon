@@ -1,11 +1,19 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom" 
-import PageLayout from "@components/layout/PageLayout";
-import { routesConstants } from "@utils/constants"; 
-import MainPage from "@pages/Main";
+import { routesConstants } from "~utils/constants"; 
+import { initStore } from "~features/AppStore";
+import PageLayout from "~components/layout/PageLayout";
+import MainPage from "~pages/Main";
+import React from "react";
 
 const { MAIN_ROUTE } = routesConstants;
 
 const AppRouter = () => {
+
+  // TODO: переделать на события чтобы по статусу ловить инфу о загрузке сторов
+  React.useEffect(() => {
+    initStore()
+  })
+
   return (
     <BrowserRouter>
       <Routes>

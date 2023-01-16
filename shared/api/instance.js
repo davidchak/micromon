@@ -3,7 +3,7 @@ import logger from '../logger';
 
 
 const http = axios.create({
-  baseURL: process.env.API_URL || '/api/v1',
+  baseURL: '/api/v1',
 });
 
 http.interceptors.request.use(
@@ -29,4 +29,4 @@ http.interceptors.response.use(
   }
 );
 
-export default http;
+export { http };
